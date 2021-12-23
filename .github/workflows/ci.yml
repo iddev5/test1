@@ -8,12 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-steps:
-  - uses: actions/checkout@v1
-  - name: Add remote origin
-    run: |
-      git remote add -f remote-test2 https://github.com/iddev5/test2.git
-  - name: Push
-    run: |
-      git subtree push --prefix test2 remote-test2 master
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Add remote origin
+      run: |
+        git remote add -f remote-test2 https://github.com/iddev5/test2.git
+    - name: Push
+      run: |
+        git subtree push --prefix test2 remote-test2 master
